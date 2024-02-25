@@ -127,4 +127,8 @@ int main()
 
     // for (int i : nums)
     //     cout << i << " ";
+
+    char ch = 'B';
+    ch = ch - 'A' + 'a';
+    cout << " " << ch;
 }
