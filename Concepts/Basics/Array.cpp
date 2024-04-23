@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 using std::cin;
 using std::cout;
 using std::endl;
 using std::swap;
+using std::vector;
 
 void MinMaxOfArray(int a[], int size)
 {
@@ -33,7 +35,7 @@ void printArray(int arr[], int size)
         cout << arr[i] << " ";
     }
     cout << endl;
-    cout << "Printing End";
+    cout << "Printing End" << endl;
 }
 
 void inputArray(int arr[], int size)
@@ -92,22 +94,46 @@ int findUnique(int *arr, int size)
         if (occurence == 1)
             return arr[i];
     }
+    return 0;
+}
+
+vector<int> rotateArray(vector<int> arr, int k)
+{
+    vector<int> ans(arr);
+    int size = arr.size();
+    for (int i = 0; i < size; i++)
+    {
+        ans[(i + k) % size] = arr[i];
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << ans[i] << " ";
+    }
+    return ans;
+}
+
+void rotateArrayInPlace(vector<int> arr, int k)
+{
 }
 
 int main()
 {
     int size;
-    cin >> size;
+    // cin >> size;
 
     int a[1000];
+    int b[5] = {2, 3, 4, 5, 6};
+    printArray(b, 5);
 
-    inputArray(a, size);
+    // inputArray(a, size);
+    // cout << *a;
     // printArray(a, size);
     // MinMaxOfArray(a, size);
     // sumArray(a, size);
     // reverseArray(a, size);
     // swapAltArray(a, size);
-    int unique = findUnique(a, size);
-    cout << unique;
+    // int unique = findUnique(a, size);
+    // cout << unique;
     return 0;
 }

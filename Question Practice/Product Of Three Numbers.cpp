@@ -25,16 +25,18 @@ int main()
 
         for (int i = a + 1; i * i <= n; i++)
         {
-            if (n % i == 0)
+            if (n % (a * i) == 0)
             {
                 b = i;
                 break;
             }
         }
 
-        c = n / (b * a);
+        // checking if there will be a int value for c = n / (b * a)
+        if (n % (b * a) == 0)
+            c = n / (b * a);
 
-        if (a != b && a != c && b != c && c != 1)
+        if (a != b && a != c && b != c && a != 1 && b != 1 && c != 1)
         {
             cout << "YES" << endl;
             cout << a << " " << b << " " << c << endl;

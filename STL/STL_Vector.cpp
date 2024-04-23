@@ -82,6 +82,29 @@ void findArraySum(vector<int> &a, int n, vector<int> &b, int m)
         cout << i << " ";
 }
 
+vector<int> reverse(vector<int> a, int begin, int end)
+{
+    while (begin < end)
+    {
+        swap(a[begin], a[end]);
+        begin++;
+        end--;
+    }
+
+    return a;
+}
+
+vector<int> rotateInPlace(vector<int> a, int k)
+{
+    k %= a.size();
+    vector<int> ans;
+    ans = reverse(a, 0, a.size() - 1);
+    ans = reverse(ans, 0, k - 1);
+    ans = reverse(ans, k, a.size() - 1);
+
+    return ans;
+}
+
 int main()
 {
     // vector<int> v;
@@ -121,14 +144,22 @@ int main()
     vector<int> a = {1, 4, 5};
     vector<int> b = {2, 6};
 
-    findArraySum(a, 3, b, 2);
+    // findArraySum(a, 3, b, 2);
 
     // rotate(nums, 2);
 
     // for (int i : nums)
     //     cout << i << " ";
 
-    char ch = 'B';
-    ch = ch - 'A' + 'a';
-    cout << " " << ch;
+    // char ch = 'B';
+    // ch = ch - 'A' + 'a';
+    // cout << " " << ch;
+    vector<int> arr = {1, 2, 3, 7, 8, 9};
+    int k = 9;
+    for (int i : arr)
+        cout << i << " ";
+    cout << "\nAfter rotating " << k << " times:" << endl;
+    vector<int> rotatedArr = rotateInPlace(arr, k);
+    for (int i : rotatedArr)
+        cout << i << " ";
 }
