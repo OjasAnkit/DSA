@@ -17,6 +17,7 @@ int main()
     cout << "Element at 3 index: " << a.at(3) << endl;
     cout << "Empty or not? " << a.empty() << endl;
 
+    // output the front element and the back element
     cout << a.front();
     cout << a.back();
 }
