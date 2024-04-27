@@ -32,6 +32,31 @@ void frequencyMap(int a[], vector<int> q){
 
 }
 
+int firstNonRepeatingElement(vector<int> a){
+    unordered_map<int, int> freqMap;
+
+    for (int i = 0; i < a.size(); i++)
+    {
+        if(freqMap[a[i]]){
+            int temp = freqMap[a[i]];
+            temp++;
+            freqMap[a[i]] = temp;
+        }
+        else freqMap[a[i]] = 1;
+    }
+
+    for(auto& o:freqMap) 
+        cout<<endl<<o.first<<"_"<<o.second<<endl;
+
+    for (int i = 0; i < a.size(); i++)
+    {
+        if(freqMap[a[i]] == 1)
+            return a[i];
+    }
+    
+    return -1;
+}
+
 int main(){
     int arr[10];
     vector<int> queries;
@@ -48,7 +73,8 @@ int main(){
         queries.push_back(temp);
     }
 
-    frequencyMap(arr, queries);
+    //frequencyMap(arr, queries);
+    cout<<"First non repeating element: "<<firstNonRepeatingElement(queries);
 
     return 0;
 }
