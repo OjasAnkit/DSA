@@ -18,6 +18,6 @@ int main()
     cout << "Empty or not? " << a.empty() << endl;
 
     // output the front element and the back element
-    cout << a.front();
+    cout << a.front()<<endl;
     cout << a.back();
 }
