@@ -45,13 +45,13 @@ int firstNonRepeatingElement(vector<int> a){
         else freqMap[a[i]] = 1;
     }
 
-    for(auto& o:freqMap) 
-        cout<<endl<<o.first<<"_"<<o.second<<endl;
+    // for(auto o:freqMap) 
+    //     cout<<endl<<o.first<<"_"<<o.second<<endl;
 
-    for (int i = 0; i < a.size(); i++)
+    for (int i:a)
     {
-        if(freqMap[a[i]] == 1)
-            return a[i];
+        if(freqMap[i] == 1)
+            return i;
     }
     
     return -1;
@@ -61,10 +61,10 @@ int main(){
     int arr[10];
     vector<int> queries;
     
-    for (int i = 0; i < 10; i++)
-    {
-        cin>>arr[i];
-    }
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     cin>>arr[i];
+    // }
 
     for (int i = 0; i < 7; i++)
     {
