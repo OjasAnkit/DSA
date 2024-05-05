@@ -105,6 +105,12 @@ vector<int> rotateInPlace(vector<int> a, int k)
     return ans;
 }
 
+int maxDifference2(int a[], int b[])
+{
+    int ans;
+    return ans;
+}
+
 int main()
 {
     // vector<int> v;
