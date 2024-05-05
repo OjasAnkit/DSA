@@ -1,38 +1,71 @@
 #include <iostream>
 #include <unordered_set>
 #include <unordered_map>
-
+#include <vector>
 using namespace std;
 
-vector<int> twoSum(vector<int>& nums, int target) {
-    unordered_map<int, int> freqSet;
+vector<int> twoSum(vector<int> &nums, int target)
+{
+    unordered_map<int, vector<int>> freqSet;
     vector<int> ans;
-    for (int i = 0; i < nums.size(); i++){
-        freqSet[i] = nums[i];
-    }        
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (freqSet[nums[i]].empty())
+        {
+            vector<int> index;
+            index.push_back(i);
+            freqSet[nums[i]] = index;
+        }
+        else
+        {
+            vector<int> index = freqSet[nums[i]];
+            index.push_back(i);
+            freqSet[nums[i]] = index;
+        }
+    }
 
-    //for(auto i:freqSet) cout<<i.first<<"_"<<i.second<<endl;
+    for (auto i : freqSet)
+        cout << i.first << "_" << i.second.size() << endl;
 
     for (int i = 0; i < nums.size(); i++)
     {
         int elementToCheck = target - nums[i];
-        if (freqSet[elementToCheck])
+        if (!freqSet[elementToCheck].empty())
         {
-            ans.push_back(freqSet[nums[i]]);
-            ans.push_back(freqSet[elementToCheck]);
-
-            return ans;
+            if (elementToCheck == nums[i])
+            {
+                if (freqSet[elementToCheck].size() != 1)
+                {
+                    return freqSet[elementToCheck];
+                }
+            }
+            else
+            {
+                ans.push_back(freqSet[nums[i]][0]);
+                ans.push_back(freqSet[elementToCheck][0]);
+                return ans;
+            }
         }
     }
-
 }
 
-int main(){
-    vector<int> query = {3, 4, 6, 1, 4};
-    vector<int> ans = twoSum(query, 8);
+int main()
+{
+    vector<int> query;
+    int len, target;
+    cin >> len;
+    cin >> target;
+    for (int i = 0; i <= len; i++)
+    {
+        int element;
+        cin >> element;
+        query.push_back(element);
+    }
 
-    for(int i : ans)
-        cout<<i<<"_";
+    vector<int> ans = twoSum(query, target);
+
+    for (int i : ans)
+        cout << i << "_";
 
     return 0;
 }
