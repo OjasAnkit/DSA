@@ -24,8 +24,8 @@ vector<int> twoSum(vector<int> &nums, int target)
         }
     }
 
-    for (auto i : freqSet)
-        cout << i.first << "_" << i.second.size() << endl;
+    // for (auto i : freqSet)
+    //     cout << i.first << "_" << i.second.size() << endl;
 
     for (int i = 0; i < nums.size(); i++)
     {
@@ -55,7 +55,7 @@ int main()
     int len, target;
     cin >> len;
     cin >> target;
-    for (int i = 0; i <= len; i++)
+    for (int i = 0; i < len; i++)
     {
         int element;
         cin >> element;
@@ -65,7 +65,7 @@ int main()
     vector<int> ans = twoSum(query, target);
 
     for (int i : ans)
-        cout << i << "_";
+        cout << "ANS:" << i << "_";
 
     return 0;
 }
