@@ -49,12 +49,28 @@ vector<int> twoSum(vector<int> &nums, int target)
     }
 }
 
+vector<int> leaders(vector<int> a, int n)
+{
+    vector<int> ans;
+    int largestEleToRight = -1, count = 0;
+    for (int i = n - 1; i >= 0; i++)
+    {
+        if (a[i] > largestEleToRight)
+        {
+            ans[count] = a[i];
+            largestEleToRight = a[i];
+            count++;
+        }
+    }
+    return ans;
+}
+
 int main()
 {
     vector<int> query;
     int len, target;
     cin >> len;
-    cin >> target;
+    // cin >> target;
     for (int i = 0; i < len; i++)
     {
         int element;
@@ -62,10 +78,10 @@ int main()
         query.push_back(element);
     }
 
-    vector<int> ans = twoSum(query, target);
+    // vector<int> ans = twoSum(query, target);
 
-    for (int i : ans)
-        cout << "ANS:" << i << "_";
+    // for (int i : ans)
+    //     cout << "ANS:" << i << "_";
 
     return 0;
 }
