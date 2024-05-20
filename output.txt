@@ -1,1 +1,3 @@
-ANS:0_ANS:1_
+Number of overlapping aaa in vector is : 5
+Number of non-overlapping aaa in vector is : count and start: 1_0
+3
