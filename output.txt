@@ -1,3 +1,1 @@
-Number of overlapping aaa in vector is : 5
-Number of non-overlapping aaa in vector is : count and start: 1_0
-3
+First Index of 6 is: 7
