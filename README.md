@@ -1,2 +1,2 @@
 # DSA
- This contains the DSA files that I created while learning to code!
+ This contains the DSA files that I created
