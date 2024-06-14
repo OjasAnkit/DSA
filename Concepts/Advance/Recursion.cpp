@@ -111,8 +111,8 @@ int firstIndex(vector<int> v, int k, int start)
 int main()
 {
     vector<char> v = {'a', 'a', 'b', 'a', 'a', 'a', 'c', 'c', 'a', 'a', 'a', 'b', 'c', 'a', 'a'};
-    vector<int> v1 = {1, 0, 7, 8, 9, 4, 5, 6, 7, 7, 7, 8, 9};
-    int k = 6;
+    vector<int> v1 = {1, 0, 7, 8, 9, 4, 5, 6, 7, 7, 7, 8, 19};
+    int k = 19;
     // cout << "Number of overlapping aaa in vector is : " << aaa_alt_non_overlapping(v, 0)<<endl;
 
     cout << "First Index of " << k << " is: " << firstIndex(v1, k, 0);
