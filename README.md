@@ -1,2 +1,2 @@
 # DSA
- This contains the DSA files that I created while learning dsa
+ This contains the DSA files that I created
