@@ -1,1 +1,1 @@
-121121
+Number of good nodes: 5
