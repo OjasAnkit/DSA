@@ -83,13 +83,13 @@ bool isBalancedString(string s)
 
 int main()
 {
-    string v = "adcbbccaacded";
+    string v = "aannnccbbbds";
     string ans = removeAnyTwoAdjacent(v);
 
-    // cout << ans;
+    cout << ans;
     // string s = "[]{(({}))}[]()";
-    string s = ")[()[]{}]{}";
-    cout << isBalancedString(s);
+    // string s = ")[()[]{}]{}";
+    // cout << isBalancedString(s);
 
     return 0;
 }
