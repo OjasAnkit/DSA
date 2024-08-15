@@ -1,1 +1,4 @@
-ancbds
+4 smallest element: -9
+3 smallest element: -10
+2 smallest element: -11
+1 smallest element: -12
